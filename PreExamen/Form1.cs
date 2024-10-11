@@ -51,7 +51,8 @@ namespace PreExamen
 
         private void BTMostrar_Click(object sender, EventArgs e)
         {
-
+            DGVUni.DataSource = null;
+            DGVUni.DataSource = ca.ObtenerAlumno();
         }
     }
 }
