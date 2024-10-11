@@ -35,6 +35,7 @@ namespace PreExamen
 
             ca.InsertarAlumno(Nombre, Apellido, Fecha, Correo);
             MessageBox.Show("Alumno agregado con exito");
+            DGVUni.DataSource = null;
         }
 
         private void BTActualizar_Click(object sender, EventArgs e)
@@ -53,6 +54,18 @@ namespace PreExamen
         {
             DGVUni.DataSource = null;
             DGVUni.DataSource = ca.ObtenerAlumno();
+        }
+
+
+        void Limpiar(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if(c is TextBox)
+                {
+                    ((TextBox)c).Clear();
+                }
+            }
         }
     }
 }
